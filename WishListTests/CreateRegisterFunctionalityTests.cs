@@ -19,11 +19,11 @@ namespace WishListTests
         [Fact(DisplayName = "Create RegisterViewModel @create-registerviewmodel")]
         public void CreateRegisterModel()
         {
-            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "AccountViewModelss" + Path.DirectorySeparatorChar + "RegisterViewModel.cs";
-            Assert.True(File.Exists(filePath), @"`RegisterViewModel.cs` was not found in the `Models\AccountViewModelss` folder.");
+            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "AccountViewModels" + Path.DirectorySeparatorChar + "RegisterViewModel.cs";
+            Assert.True(File.Exists(filePath), @"`RegisterViewModel.cs` was not found in the `Models\AccountViewModels` folder.");
 
-            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.RegisterViewModel");
-            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
+            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.RegisterViewModel");
+            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
 
             var emailProperty = registerViewModel.GetProperty("Email");
             Assert.True(emailProperty != null, "`RegisterViewModel` does not appear to contain a `public` `string` property `Email`.");
@@ -66,9 +66,9 @@ namespace WishListTests
                 file = streamReader.ReadToEnd();
             }
 
-            var pattern = @"@model\s*WishList[.]Models[.]AccountViewModelss[.]RegisterViewModel";
+            var pattern = @"@model\s*WishList[.]Models[.]AccountViewModels[.]RegisterViewModel";
             var rgx = new Regex(pattern);
-            Assert.True(rgx.IsMatch(file), @"`Register.cshtml` doesn't have it's model set to `WishList.Models.AccountViewModelss.RegisterViewModel`.");
+            Assert.True(rgx.IsMatch(file), @"`Register.cshtml` doesn't have it's model set to `WishList.Models.AccountViewModels.RegisterViewModel`.");
 
             pattern = @"<\s*?form\s*.*?asp-action\s*?=\s*?""Register""\s*?.*?>";
             rgx = new Regex(pattern);
@@ -137,8 +137,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.RegisterViewModel");
-            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
+            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.RegisterViewModel");
+            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
 
             var method = accountController.GetMethod("Register", new Type[] { registerViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Register` method with a parameter of type `RegisterViewModel`.");
@@ -170,8 +170,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.RegisterViewModel");
-            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
+            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.RegisterViewModel");
+            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
 
             var method = accountController.GetMethod("Register", new Type[] { registerViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Register` method with a parameter of type `RegisterViewModel`.");
@@ -218,8 +218,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.RegisterViewModel");
-            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
+            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.RegisterViewModel");
+            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
 
             var method = accountController.GetMethod("Register", new Type[] { registerViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Register` method with a parameter of type `RegisterViewModel`.");
@@ -274,8 +274,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.RegisterViewModel");
-            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
+            var registerViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.RegisterViewModel");
+            Assert.True(registerViewModel != null, "A `public` class `RegisterViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
 
             var method = accountController.GetMethod("Register", new Type[] { registerViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Register` method with a parameter of type `RegisterViewModel`.");
