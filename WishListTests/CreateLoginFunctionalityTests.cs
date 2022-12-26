@@ -18,11 +18,11 @@ namespace WishListTests
         [Fact(DisplayName = "Create LoginViewModel @create-loginviewmodel")]
         public void CreateLoginModel()
         {
-            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "AccountViewModels" + Path.DirectorySeparatorChar + "LoginViewModel.cs";
-            Assert.True(File.Exists(filePath), @"`LoginViewModel.cs` was not found in the `Models\AccountViewModels` folder.");
+            var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "WishList" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "AccountViewModelss" + Path.DirectorySeparatorChar + "LoginViewModel.cs";
+            Assert.True(File.Exists(filePath), @"`LoginViewModel.cs` was not found in the `Models\AccountViewModelss` folder.");
 
-            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.LoginViewModel");
-            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
+            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.LoginViewModel");
+            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
 
             var emailProperty = loginViewModel.GetProperty("Email");
             Assert.True(emailProperty != null, "`LoginViewModel` does not appear to contain a `public` `string` property `Email`.");
@@ -87,8 +87,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.LoginViewModel");
-            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
+            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.LoginViewModel");
+            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
 
             var method = accountController.GetMethod("Login", new Type[] { loginViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Login` method with a parameter of type `LoginViewModel`.");
@@ -122,8 +122,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.LoginViewModel");
-            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
+            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.LoginViewModel");
+            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
 
             var method = accountController.GetMethod("Login", new Type[] { loginViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Login` method with a parameter of type `LoginViewModel`.");
@@ -169,8 +169,8 @@ namespace WishListTests
             var accountController = TestHelpers.GetUserType("WishList.Controllers.AccountController");
             Assert.True(accountController != null, "A `public` class `AccountController` was not found in the `WishList.Controllers` namespace.");
 
-            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModels.LoginViewModel");
-            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModels` namespace.");
+            var loginViewModel = TestHelpers.GetUserType("WishList.Models.AccountViewModelss.LoginViewModel");
+            Assert.True(loginViewModel != null, "A `public` class `LoginViewModel` was not found in the `WishList.Models.AccountViewModelss` namespace.");
 
             var method = accountController.GetMethod("Login", new Type[] { loginViewModel });
             Assert.True(method != null, "`AccountController` did not contain a `Login` method with a parameter of type `LoginViewModel`.");

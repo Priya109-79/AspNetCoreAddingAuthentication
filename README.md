@@ -52,7 +52,7 @@ __Note:__ this isn't the only way to accomplish this, however; this is what the 
 			- This constructor should set each of the private readonly properties using the parameter of the same type
 	- [ ] Create Register Functionality
 		- [ ] Create RegisterViewModel class
-			- Inside the `Models/AccountViewModels` folder create a new model `RegisterViewModel` (You will need to create the AccountViewModels folder)
+			- Inside the `Models/AccountViewModelss` folder create a new model `RegisterViewModel` (You will need to create the AccountViewModelss folder)
 			- Create a `String` Property Email
 				- Email should have the Required attribute (you will need to add a `using` directive for `System.ComponentModel.DataAnnotations`)
 				- Email should have the EmailAddress attribute
@@ -65,7 +65,7 @@ __Note:__ this isn't the only way to accomplish this, however; this is what the 
 				- `ConfirmPassword` should have the `Compare` attribute with "Password"
 		- [ ] Create the Register View
 			- Inside the `Views/Account` folder add a new view `Register` (you will need to create the `Account` folder)
-			- `Register.cshtml` should have a model of `RegisterViewModel` (You will need to include the namespace, `WishList.Models.AccountViewModels.RegisterViewModel`)
+			- `Register.cshtml` should have a model of `RegisterViewModel` (You will need to include the namespace, `WishList.Models.AccountViewModelss.RegisterViewModel`)
 			- Add the following HTML to the view (we're providing this to save you from needing to type it all yourself)
 				```
 				<h3>Register New User</h3>
@@ -101,7 +101,7 @@ __Note:__ this isn't the only way to accomplish this, however; this is what the 
 		- [ ] Create an `HttpPost` action `Register` in the `AccountController` class
 			- This action should have the `HttpPost` attribute
 			- This action should have the `AllowAnonymous` attribute
-			- This action should accept a parameter of type `RegisterViewModel`  (you will need to add a `using` directive for `WishList.Models.AccountViewModels`) 
+			- This action should accept a parameter of type `RegisterViewModel`  (you will need to add a `using` directive for `WishList.Models.AccountViewModelss`) 
 			- This action should return a `RedirectToAction` to `HomeController.Index`
 		- [ ] Update the `HttpPost` `Register` action to check if the `ModelState` is valid
 				- If not return the `Register` view with the model provided in the parameter as it's model
@@ -109,7 +109,7 @@ __Note:__ this isn't the only way to accomplish this, however; this is what the 
 		- [ ] Check the `Result` property from the `HttpPost` `Register`'s the `CreateAsync` call if `Result.Success`
 				- If `Result.Success` is `false` foreach error in `Result.Errors` use `ModelState.AddModelError` to add an error with a the first parameter of`"Password"` and second with the value of the error's `Description` property. Then return the `Register` view with the model provided by `Register`'s the parameter.
 	- [ ] Create Login / Logout Functionality
-		- [ ] Create `LoginViewModel` class in the `Models\AccountViewModels` folder
+		- [ ] Create `LoginViewModel` class in the `Models\AccountViewModelss` folder
 			- Create a `String` Property Email
 				- Email should have the Required attribute
 				- Email should have the EmailAddress attribute
@@ -119,7 +119,7 @@ __Note:__ this isn't the only way to accomplish this, however; this is what the 
 		- [ ] Create a `Login.cshtml` view in the `Views/Account` folder
 			- Add the following HTML to the `Login` view
 				```
-				@model WishList.Models.AccountViewModels.LoginViewModel
+				@model WishList.Models.AccountViewModelss.LoginViewModel
 				<h2>Log in</h2>
 				<form asp-action="Login" method="post">
 					<div asp-validation-summary="All" class="text-danger"></div>
