@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WishList.Models.AccountsViewModel
+namespace WishList.Models.AccountViewModel
 {
     public class RegisterViewModel
     {
